@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!-- Siden "Podcast og radio": viser tre radioprogram/podcaster som kort, med lenke til hvert enkelt. -->
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <!-- Får siden til å passe til størrelsen på skjermen, også på mobil -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Teksten som vises i fanen i nettleseren -->
+  <title>Podcast og radio – Kristin Nordvoll Mork</title>
+  <!-- Kort beskrivelse som kan vises i Google-søk -->
+  <meta name="description" content="Podcaster og radio med Kristin Nordvoll Mork (@foreldrefella).">
+  <!-- Henter skriften "Special Elite" fra Google Fonts. Denne fonten bruker Kristin på Instagram -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <!-- Kobler siden til utseendet i style.css -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Animasjoner, overganger og transformasjoner (egen fil for denne oppgaven) -->
+  <link rel="stylesheet" href="animasjoner.css">
+</head>
+<body>
+
+  <!-- Menyen øverst, lik på alle sidene. Siden du er på er markert med aria-current="page". -->
+  <header class="topp">
+    <a href="index.html" class="logo">#skamvittigheten</a>
+    <nav aria-label="Hovedmeny">
+      <ul>
+        <li><a href="index.html">Skamvittigheten</a></li>
+        <li><a href="egentid.html">Egentid</a></li>
+        <li><a href="podcaster.html" aria-current="page">Podcast og radio</a></li>
+        <li><a href="book-en-sliten-mamma.html">Book en sliten mamma</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Selve innholdet på siden -->
+  <main id="top">
+
+    <!-- Tittel og kort introduksjon -->
+    <section class="side">
+      <h1>Podcast og radio</h1>
+      <p class="ingress">Humor på lyd: podcaster og radioprogrammer med Kristin Nordvoll Mork.</p>
+    </section>
+
+    <!-- Kortene med programmene. "podcaster" gjør at omslagsbildene vises kvadratiske. -->
+    <section class="eventer">
+      <div class="kort-liste podcaster">
+
+        <!-- Kort 1: Någen+ (podcast) -->
+        <article class="kort"><img src="Pictures/naagenpluss.png" alt="Coverbilde for Någen+: tre skolebilder fra ungdomstiden over podcasttittelen" width="952" height="944" loading="lazy"><div class="kort-innhold">
+          <h3>Någen+</h3>
+          <p>Gamle norskstiler leses høyt og sensureres av to som ikke viker unna det flaue. Kristin Nordvoll Mork og Anders Havdal Tangenes vurderer stilene til Janne Bjerkholt Chen (og noen av Kristins egne). Tolv episoder fra 2019, produsert av Munck Studios.</p>
+          <!-- Knappen åpner programmet i en ny fane -->
+          <a href="https://podcasts.apple.com/us/podcast/n%C3%A5gen/id1461679992" class="knapp" target="_blank" rel="noopener">Lytt på Apple Podcasts</a>
+        </div></article>
+
+        <!-- Kort 2: Kristins sommerkassett (radio) -->
+        <article class="kort"><img src="Pictures/sommerkassett.png" alt="Kristin ligger i gresset med stråhatt og holder en kassett, med bassengringer og prestekrager rundt seg" width="756" height="564" loading="lazy"><div class="kort-innhold">
+          <h3>Kristins sommerkassett</h3>
+          <p>Kristin byr på analog sommerstemning med mye musikk og fint lite alvor. Her byr hun på ekte analog sommerstemning med mye variert musikk og en lettbeint, uformell atmosfære. Nostalgien og minnene om Postens sommerkassett er litt av motoren i dette sommerprogrammet på NRK P1. </p>
+          <a href="https://radio.nrk.no/serie/kristins-sommerkassett" class="knapp" target="_blank" rel="noopener">Lytt på NRK Radio</a>
+        </div></article>
+
+        <!-- Kort 3: Landsmøte (radio) -->
+        <article class="kort"><img src="Pictures/landsmote.png" alt="Logoen til Landsmøte: en løve med mikrofon og hodetelefoner" width="596" height="556" loading="lazy"><div class="kort-innhold">
+          <h3>Landsmøte</h3>
+          <p>Kristin jobbet som reporter og programleder i humorprogrammet Landsmøte på NRK P1 i ett års tid mellom 2022 og 2023. Her bød hun på programperler som ReiseKristin, Morks motiverende mandagsmelodi, Kristins kræsjkurs i enderim, og historier om den første kjærligheten. </p>
+          <a href="https://radio.nrk.no/serie/landsmoete/DMVD02001922" class="knapp" target="_blank" rel="noopener">Lytt på NRK Radio</a>
+        </div></article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bunnen av siden: forklaring om at dette er et skoleprosjekt, og lenker til den ekte siden -->
+   <footer class="bunn">
+    <div>
+      <p>Tenkt eventside laget som skoleprosjekt ved Kodehode. Ingen billetter selges, og tider og priser er oppdiktet.</p>
+      <p>Ekte datoer og billetter: <a href="https://foreldrefella.no/pages/standup-show-i-vinter">foreldrefella.no</a></p>
+    </div>
+    <div class="instagram-footer-info" style="margin-bottom: 15px; font-size: 14px; line-height: 1.5;">
+   <p style="margin-bottom: 10px;">
+      Denne nettsidens utforming er basert på den grafiske profilen i Instagramprofilen @Foreldrefella. 
+      Du vil kjenne igjen både fargeprofil og fontvalg.
+   </p>
+   <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Besøk Foreldrefella på Instagram (åpnes i ny fane)" style="display: inline-flex; align-items: center; color: inherit; text-decoration: none; font-weight: bold; gap: 6px;"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="currentColor" style="flex-shrink: 0;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+  </svg><span>Besøk Foreldrefella på Instagram</span></a>
+</div>
+    <p class="signatur">foreldrefella.no</p>
+  </footer>
+
+</body>
+</html>
