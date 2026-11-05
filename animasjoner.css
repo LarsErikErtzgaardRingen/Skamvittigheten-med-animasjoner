@@ -1,0 +1,23 @@
+/* 
+Denne fila lastes ETTER style.css, så den kan bygge videre på stilene
+   som allerede finnes. 
+   
+Dette har jeg gjort for å skille tydelig mellom det som allerede var gjort på denne nettsiden, og det jeg har gjort for å løse denne spesifike oppgaven. Ellers hadde jeg nok bare lagt alt i style.css, men da hadde det vært vanskeligere å se hva som er gjort for denne oppgaven. 
+*/
+
+/* ---------- 1. @keyframes ---------- */
+
+/* Logoen «stemples» inn: roterer og skaleres i tre trinn */
+@keyframes stempel {
+  0%   { opacity: 0; transform: rotate(-12deg) scale(0.6); }
+  50%  { opacity: 1; transform: rotate(6deg) scale(1.15); }
+  100% { opacity: 1; transform: rotate(0deg) scale(1); }
+}
+
+/* Herobildet faller ned ovenfra og spretter litt før det legger seg */
+@keyframes inn-ovenfra {
+  0%   { opacity: 0; transform: translateY(-40px) rotate(-2deg); }
+  60%  { opacity: 1; transform: translateY(8px) rotate(1deg); }
+  100% { opacity: 1; transform: translateY(0) rotate(0deg); }
+}
+
