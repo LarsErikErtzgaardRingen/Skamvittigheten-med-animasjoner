@@ -72,3 +72,169 @@ Dette har jeg gjort for å skille tydelig mellom det som allerede var gjort på 
 .fakta {
   animation: fade-opp 0.9s ease-out 0.7s both;
 }
+/* ---------- 5. «Se datoer»-knappen: animation + transition + transform ---------- */
+/* - animation:  ringen pulserer hele tiden, og pila hopper
+   - transition: farge, bakgrunn og størrelse endres jevnt ved hover
+   - transform:  knappen skaleres opp og vippes litt
+   - teksten inni fader inn med keyframes når man hovrer */
+.knapp-hovud {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  animation: puls 2s ease-out 1.5s infinite;
+}
+.knapp-hovud:hover,
+.knapp-hovud:focus-visible {
+  animation-play-state: paused;       /* ringen stopper mens man holder over */
+  /* transform for denne knappen står i seksjon 6, så den ikke blir overstyrt */
+}
+.knapp-hovud .knapp-tekst {
+  display: inline-block;
+}
+.knapp-hovud:hover .knapp-tekst,
+.knapp-hovud:focus-visible .knapp-tekst {
+  animation: tekst-inn 0.5s ease-out;
+}
+.knapp-hovud .pil {
+  display: inline-block;
+  animation: hopp 1.2s ease-in-out infinite;
+}
+
+
+/* ---------- 6. Alle knapper: jevne overganger ---------- */
+/* Fargene til hover er allerede satt i style.css – her gjør vi bare
+   overgangen jevn, og legger til en liten løft og et «trykk». */
+.knapp {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.25s ease;
+}
+.knapp:not([disabled]):hover {
+  transform: translateY(-3px);
+}
+.knapp:not([disabled]):active {
+  transform: translateY(0) scale(0.96);   /* føles som et trykk */
+}
+/* «Se datoer»-knappen skal skaleres og vippes i stedet for å løftes.
+   To klasser (.knapp.knapp-hovud) gir høyere spesifisitet, så denne vinner. */
+.knapp.knapp-hovud:hover,
+.knapp.knapp-hovud:focus-visible {
+  transform: scale(1.1) rotate(-2deg);
+}
+
+
+/* ---------- 7. Lenker ---------- */
+/* Menylenker: understreken tegnes fra midten og ut med scaleX */
+.topp nav a {
+  position: relative;
+  border-bottom: 0;                   /* erstatter den gamle understreken */
+  transition: opacity 0.3s ease;
+}
+.topp nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  background: var(--krem);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+.topp nav a:hover::after,
+.topp nav a:focus-visible::after,
+.topp nav a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+/* De andre menypunktene dempes litt når du holder over ett av dem */
+.topp nav ul:hover a:not(:hover) {
+  opacity: 0.6;
+}
+
+/* Lenker i footeren: endrer opasitet, og Instagram-ikonet snurrer */
+.bunn a {
+  transition: opacity 0.3s ease;
+}
+.bunn a:hover,
+.bunn a:focus-visible {
+  opacity: 0.7;
+}
+.bunn a svg {
+  transition: transform 0.5s ease;
+}
+.bunn a:hover svg,
+.bunn a:focus-visible svg {
+  transform: rotate(360deg) scale(1.2);
+}
+
+/* Signaturen nederst står skjevt, som et håndskrevet stempel */
+.signatur {
+  display: inline-block;
+  transform: rotate(-4deg);
+  transition: transform 0.4s ease;
+}
+.signatur:hover {
+  transform: rotate(3deg) scale(1.1);
+}
+
+
+/* ---------- 8. Skjeve overskrifter (skew) ---------- */
+/* Gir overskriftene et litt «stemplet», skrått uttrykk.
+   Ved hover retter de seg ut med en jevn overgang. */
+.eventer h2,
+.booking h2,
+.side h1 {
+  display: block;
+  width: fit-content;
+  margin-inline: auto;
+  transform: skewX(-8deg) rotate(-1deg);
+  transition: transform 0.4s ease;
+}
+.eventer h2:hover,
+.booking h2:hover,
+.side h1:hover {
+  transform: skewX(0deg) rotate(0deg);
+}
+
+
+/* ---------- 9. Event-kortene ---------- */
+.kort {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+.kort:hover {
+  transform: translateY(-6px) rotate(-0.5deg);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+/* Bildet i kortet zoomer inn. Kortet har allerede overflow: hidden. */
+.kort img {
+  transition: transform 0.5s ease;
+}
+.kort:hover img {
+  transform: scale(1.08);
+}
+/* Teksten i kortet blir litt svakere til man holder over kortet */
+.kort .kort-innhold p:not(.pris) {
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+.kort:hover .kort-innhold p:not(.pris) {
+  opacity: 1;
+}
+
+
+/* ---------- 10. Mindre bevegelse for de som ønsker det ---------- */
+/* Noen blir svimle av animasjoner, og har skrudd av dette i
+   innstillingene på maskinen sin. Da slår vi av nesten alt. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
